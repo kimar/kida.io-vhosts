@@ -5,6 +5,10 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 
+	ssl_certificate /etc/letsencrypt/live/sfo1.kida.io/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/sfo1.kida.io/privkey.pem;
+
+
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 	server_name _;
