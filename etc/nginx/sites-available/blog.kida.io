@@ -14,6 +14,9 @@ server {
   ssl_certificate /etc/letsencrypt/live/sfo1.kida.io/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/sfo1.kida.io/privkey.pem;
 
+  access_log /var/log/nginx/$domain.access.log;
+  error_log /var/log/nginx/$domain.error.log;
+
   location / {
     proxy_pass http://kimar.github.io;
     proxy_redirect default;
